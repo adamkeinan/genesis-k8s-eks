@@ -1,0 +1,29 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: homes
+  namespace: aws-hub
+  annotations:
+    volume.beta.kubernetes.io/storage-class: efs
+spec:
+  storageClassName: efs
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: shared
+  namespace: aws-hub
+  annotations:
+    volume.beta.kubernetes.io/storage-class: efs
+spec:
+  storageClassName: efs
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Mi

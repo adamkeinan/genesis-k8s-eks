@@ -1,0 +1,964 @@
+jupyterhub:
+  singleuser:
+    profileList:
+    - aws:
+        cpu: '96'
+        gpu: null
+        instance_size: 24xlarge
+        memory: 768 GiB
+        network: 25 Gigabit
+        price: 6.048
+        price_description: $6.05/hour
+        storage: EBS only
+      category: Memory optimized
+      description: 96 CPU, 768 GiB RAM
+      display_name: r5-24xlarge
+      family: R5
+      kubespawner_override:
+        cpu_guarantee: 86.4
+        cpu_limit: 96.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 643730M
+        mem_limit: 643730M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - r5-24xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: r5-24xlarge
+    - aws:
+        cpu: '32'
+        gpu: null
+        instance_size: 8xlarge
+        memory: 128 GiB
+        network: 10 Gigabit
+        price: 1.536
+        price_description: $1.54/hour
+        storage: EBS only
+      category: General purpose
+      description: 32 CPU, 128 GiB RAM
+      display_name: m5-8xlarge
+      family: M5
+      kubespawner_override:
+        cpu_guarantee: 28.8
+        cpu_limit: 32.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 107288M
+        mem_limit: 107288M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - m5-8xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: m5-8xlarge
+    - aws:
+        cpu: '96'
+        gpu: null
+        instance_size: 24xlarge
+        memory: 384 GiB
+        network: 25 Gigabit
+        price: 4.608
+        price_description: $4.61/hour
+        storage: EBS only
+      category: General purpose
+      description: 96 CPU, 384 GiB RAM
+      display_name: m5-24xlarge
+      family: M5
+      kubespawner_override:
+        cpu_guarantee: 86.4
+        cpu_limit: 96.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 321865M
+        mem_limit: 321865M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - m5-24xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: m5-24xlarge
+    - aws:
+        cpu: '2'
+        gpu: null
+        instance_size: large
+        memory: 16 GiB
+        network: 10 Gigabit
+        price: 0.126
+        price_description: $0.13/hour
+        storage: EBS only
+      category: Memory optimized
+      description: 2 CPU, 16 GiB RAM
+      display_name: r5-large
+      family: R5
+      kubespawner_override:
+        cpu_guarantee: 1.8
+        cpu_limit: 2.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 13411M
+        mem_limit: 13411M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - r5-large
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: r5-large
+    - aws:
+        cpu: '32'
+        gpu: '4'
+        instance_size: 8xlarge
+        memory: 244 GiB
+        network: 10 Gigabit
+        price: 12.24
+        price_description: $12.24/hour
+        storage: EBS only
+      category: GPU instance
+      description: 32 CPU, 244 GiB RAM, 4 GPU
+      display_name: p3-8xlarge
+      family: P3
+      kubespawner_override:
+        cpu_guarantee: 28.8
+        cpu_limit: 32.0
+        extra_resource_limits:
+          nvidia.com/gpu: '4'
+        mem_guarantee: 204518M
+        mem_limit: 204518M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - p3-8xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: p3-8xlarge
+    - aws:
+        cpu: '8'
+        gpu: null
+        instance_size: 2xlarge
+        memory: 64 GiB
+        network: 10 Gigabit
+        price: 0.504
+        price_description: $0.50/hour
+        storage: EBS only
+      category: Memory optimized
+      description: 8 CPU, 64 GiB RAM
+      display_name: r5-2xlarge
+      family: R5
+      kubespawner_override:
+        cpu_guarantee: 7.2
+        cpu_limit: 8.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 53644M
+        mem_limit: 53644M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - r5-2xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: r5-2xlarge
+    - aws:
+        cpu: '4'
+        gpu: null
+        instance_size: xlarge
+        memory: 16 GiB
+        network: Moderate
+        price: 0.1664
+        price_description: $0.17/hour
+        storage: EBS only
+      category: General purpose
+      description: 4 CPU, 16 GiB RAM
+      display_name: t3-xlarge
+      family: T3
+      kubespawner_override:
+        cpu_guarantee: 3.6
+        cpu_limit: 4.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 13411M
+        mem_limit: 13411M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - t3-xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: t3-xlarge
+    - aws:
+        cpu: '96'
+        gpu: null
+        instance_size: 24xlarge
+        memory: 192 GiB
+        network: 25 Gigabit
+        price: 4.08
+        price_description: $4.08/hour
+        storage: EBS only
+      category: Compute optimized
+      description: 96 CPU, 192 GiB RAM
+      display_name: c5-24xlarge
+      family: C5
+      kubespawner_override:
+        cpu_guarantee: 86.4
+        cpu_limit: 96.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 160932M
+        mem_limit: 160932M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - c5-24xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: c5-24xlarge
+    - aws:
+        cpu: '4'
+        gpu: null
+        instance_size: xlarge
+        memory: 32 GiB
+        network: 10 Gigabit
+        price: 0.252
+        price_description: $0.25/hour
+        storage: EBS only
+      category: Memory optimized
+      description: 4 CPU, 32 GiB RAM
+      display_name: r5-xlarge
+      family: R5
+      kubespawner_override:
+        cpu_guarantee: 3.6
+        cpu_limit: 4.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 26822M
+        mem_limit: 26822M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - r5-xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: r5-xlarge
+    - aws:
+        cpu: '16'
+        gpu: null
+        instance_size: 4xlarge
+        memory: 128 GiB
+        network: 10 Gigabit
+        price: 1.008
+        price_description: $1.01/hour
+        storage: EBS only
+      category: Memory optimized
+      description: 16 CPU, 128 GiB RAM
+      display_name: r5-4xlarge
+      family: R5
+      kubespawner_override:
+        cpu_guarantee: 14.4
+        cpu_limit: 16.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 107288M
+        mem_limit: 107288M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - r5-4xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: r5-4xlarge
+    - aws:
+        cpu: '2'
+        gpu: null
+        instance_size: medium
+        memory: 4 GiB
+        network: Low to Moderate
+        price: 0.0416
+        price_description: $0.04/hour
+        storage: EBS only
+      category: General purpose
+      description: 2 CPU, 4 GiB RAM
+      display_name: t3-medium
+      family: T3
+      kubespawner_override:
+        cpu_guarantee: 1.8
+        cpu_limit: 2.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 3352M
+        mem_limit: 3352M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - t3-medium
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: t3-medium
+    - aws:
+        cpu: '8'
+        gpu: '1'
+        instance_size: 2xlarge
+        memory: 32 GiB
+        network: Up to 25 Gigabit
+        price: 0.752
+        price_description: $0.75/hour
+        storage: 225 GB NVMe SSD
+      category: GPU instance
+      description: 8 CPU, 32 GiB RAM, 1 GPU
+      display_name: g4dn-2xlarge
+      family: G4DN
+      kubespawner_override:
+        cpu_guarantee: 7.2
+        cpu_limit: 8.0
+        extra_resource_limits:
+          nvidia.com/gpu: '1'
+        mem_guarantee: 26822M
+        mem_limit: 26822M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - g4dn-2xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: g4dn-2xlarge
+    - aws:
+        cpu: '2'
+        gpu: null
+        instance_size: large
+        memory: 8 GiB
+        network: Up to 10 Gigabit
+        price: 0.096
+        price_description: $0.10/hour
+        storage: EBS only
+      category: General purpose
+      description: 2 CPU, 8 GiB RAM
+      display_name: m5-large
+      family: M5
+      kubespawner_override:
+        cpu_guarantee: 1.8
+        cpu_limit: 2.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 6705M
+        mem_limit: 6705M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - m5-large
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: m5-large
+    - aws:
+        cpu: '64'
+        gpu: '8'
+        instance_size: 16xlarge
+        memory: 488 GiB
+        network: 25 Gigabit
+        price: 24.48
+        price_description: $24.48/hour
+        storage: EBS only
+      category: GPU instance
+      description: 64 CPU, 488 GiB RAM, 8 GPU
+      display_name: p3-16xlarge
+      family: P3
+      kubespawner_override:
+        cpu_guarantee: 57.6
+        cpu_limit: 64.0
+        extra_resource_limits:
+          nvidia.com/gpu: '8'
+        mem_guarantee: 409036M
+        mem_limit: 409036M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - p3-16xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: p3-16xlarge
+    - aws:
+        cpu: '48'
+        gpu: null
+        instance_size: 12xlarge
+        memory: 384 GiB
+        network: 10 Gigabit
+        price: 3.024
+        price_description: $3.02/hour
+        storage: EBS only
+      category: Memory optimized
+      description: 48 CPU, 384 GiB RAM
+      display_name: r5-12xlarge
+      family: R5
+      kubespawner_override:
+        cpu_guarantee: 43.2
+        cpu_limit: 48.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 321865M
+        mem_limit: 321865M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - r5-12xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: r5-12xlarge
+    - aws:
+        cpu: '4'
+        gpu: null
+        instance_size: xlarge
+        memory: 16 GiB
+        network: Up to 10 Gigabit
+        price: 0.192
+        price_description: $0.19/hour
+        storage: EBS only
+      category: General purpose
+      description: 4 CPU, 16 GiB RAM
+      display_name: m5-xlarge
+      family: M5
+      kubespawner_override:
+        cpu_guarantee: 3.6
+        cpu_limit: 4.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 13411M
+        mem_limit: 13411M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - m5-xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: m5-xlarge
+    - aws:
+        cpu: '8'
+        gpu: '1'
+        instance_size: 2xlarge
+        memory: 61 GiB
+        network: Up to 10 Gigabit
+        price: 3.06
+        price_description: $3.06/hour
+        storage: EBS only
+      category: GPU instance
+      description: 8 CPU, 61 GiB RAM, 1 GPU
+      display_name: p3-2xlarge
+      family: P3
+      kubespawner_override:
+        cpu_guarantee: 7.2
+        cpu_limit: 8.0
+        extra_resource_limits:
+          nvidia.com/gpu: '1'
+        mem_guarantee: 51129M
+        mem_limit: 51129M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - p3-2xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: p3-2xlarge
+    - aws:
+        cpu: '16'
+        gpu: null
+        instance_size: 4xlarge
+        memory: 32 GiB
+        network: Up to 10 Gigabit
+        price: 0.68
+        price_description: $0.68/hour
+        storage: EBS only
+      category: Compute optimized
+      description: 16 CPU, 32 GiB RAM
+      display_name: c5-4xlarge
+      family: C5
+      kubespawner_override:
+        cpu_guarantee: 14.4
+        cpu_limit: 16.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 26822M
+        mem_limit: 26822M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - c5-4xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: c5-4xlarge
+    - aws:
+        cpu: '48'
+        gpu: null
+        instance_size: 12xlarge
+        memory: 96 GiB
+        network: 12 Gigabit
+        price: 2.04
+        price_description: $2.04/hour
+        storage: EBS only
+      category: Compute optimized
+      description: 48 CPU, 96 GiB RAM
+      display_name: c5-12xlarge
+      family: C5
+      kubespawner_override:
+        cpu_guarantee: 43.2
+        cpu_limit: 48.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 80466M
+        mem_limit: 80466M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - c5-12xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: c5-12xlarge
+    - aws:
+        cpu: '8'
+        gpu: null
+        instance_size: 2xlarge
+        memory: 32 GiB
+        network: Moderate
+        price: 0.3328
+        price_description: $0.33/hour
+        storage: EBS only
+      category: General purpose
+      description: 8 CPU, 32 GiB RAM
+      display_name: t3-2xlarge
+      family: T3
+      kubespawner_override:
+        cpu_guarantee: 7.2
+        cpu_limit: 8.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 26822M
+        mem_limit: 26822M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - t3-2xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: t3-2xlarge
+    - aws:
+        cpu: '4'
+        gpu: '1'
+        instance_size: xlarge
+        memory: 16 GiB
+        network: Up to 25 Gigabit
+        price: 0.526
+        price_description: $0.53/hour
+        storage: 125 GB NVMe SSD
+      category: GPU instance
+      description: 4 CPU, 16 GiB RAM, 1 GPU
+      display_name: g4dn-xlarge
+      family: G4DN
+      kubespawner_override:
+        cpu_guarantee: 3.6
+        cpu_limit: 4.0
+        extra_resource_limits:
+          nvidia.com/gpu: '1'
+        mem_guarantee: 13411M
+        mem_limit: 13411M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - g4dn-xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: g4dn-xlarge
+    - aws:
+        cpu: '2'
+        gpu: null
+        instance_size: large
+        memory: 8 GiB
+        network: Low to Moderate
+        price: 0.0832
+        price_description: $0.08/hour
+        storage: EBS only
+      category: General purpose
+      description: 2 CPU, 8 GiB RAM
+      display_name: t3-large
+      family: T3
+      kubespawner_override:
+        cpu_guarantee: 1.8
+        cpu_limit: 2.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 6705M
+        mem_limit: 6705M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - t3-large
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: t3-large
+    - aws:
+        cpu: '16'
+        gpu: null
+        instance_size: 4xlarge
+        memory: 64 GiB
+        network: Up to 10 Gigabit
+        price: 0.768
+        price_description: $0.77/hour
+        storage: EBS only
+      category: General purpose
+      description: 16 CPU, 64 GiB RAM
+      display_name: m5-4xlarge
+      family: M5
+      kubespawner_override:
+        cpu_guarantee: 14.4
+        cpu_limit: 16.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 53644M
+        mem_limit: 53644M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - m5-4xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: m5-4xlarge
+    - aws:
+        cpu: '16'
+        gpu: '1'
+        instance_size: 4xlarge
+        memory: 64 GiB
+        network: Up to 25 Gigabit
+        price: 1.204
+        price_description: $1.20/hour
+        storage: 225 GB NVMe SSD
+      category: GPU instance
+      description: 16 CPU, 64 GiB RAM, 1 GPU
+      display_name: g4dn-4xlarge
+      family: G4DN
+      kubespawner_override:
+        cpu_guarantee: 14.4
+        cpu_limit: 16.0
+        extra_resource_limits:
+          nvidia.com/gpu: '1'
+        mem_guarantee: 53644M
+        mem_limit: 53644M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - g4dn-4xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: g4dn-4xlarge
+    - aws:
+        cpu: '2'
+        gpu: null
+        instance_size: large
+        memory: 4 GiB
+        network: Up to 10 Gigabit
+        price: 0.085
+        price_description: $0.09/hour
+        storage: EBS only
+      category: Compute optimized
+      description: 2 CPU, 4 GiB RAM
+      display_name: c5-large
+      family: C5
+      kubespawner_override:
+        cpu_guarantee: 1.8
+        cpu_limit: 2.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 3352M
+        mem_limit: 3352M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - c5-large
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: c5-large
+    - aws:
+        cpu: '4'
+        gpu: null
+        instance_size: xlarge
+        memory: 8 GiB
+        network: Up to 10 Gigabit
+        price: 0.17
+        price_description: $0.17/hour
+        storage: EBS only
+      category: Compute optimized
+      description: 4 CPU, 8 GiB RAM
+      display_name: c5-xlarge
+      family: C5
+      kubespawner_override:
+        cpu_guarantee: 3.6
+        cpu_limit: 4.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 6705M
+        mem_limit: 6705M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - c5-xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: c5-xlarge
+    - aws:
+        cpu: '8'
+        gpu: null
+        instance_size: 2xlarge
+        memory: 16 GiB
+        network: Up to 10 Gigabit
+        price: 0.34
+        price_description: $0.34/hour
+        storage: EBS only
+      category: Compute optimized
+      description: 8 CPU, 16 GiB RAM
+      display_name: c5-2xlarge
+      family: C5
+      kubespawner_override:
+        cpu_guarantee: 7.2
+        cpu_limit: 8.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 13411M
+        mem_limit: 13411M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - c5-2xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: c5-2xlarge
+    - aws:
+        cpu: '2'
+        gpu: null
+        instance_size: small
+        memory: 2 GiB
+        network: Low to Moderate
+        price: 0.0208
+        price_description: $0.02/hour
+        storage: EBS only
+      category: General purpose
+      description: 2 CPU, 2 GiB RAM
+      display_name: t3-small
+      family: T3
+      kubespawner_override:
+        cpu_guarantee: 1.8
+        cpu_limit: 2.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 1676M
+        mem_limit: 1676M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - t3-small
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: t3-small
+    - aws:
+        cpu: '48'
+        gpu: null
+        instance_size: 12xlarge
+        memory: 192 GiB
+        network: 10 Gigabit
+        price: 2.304
+        price_description: $2.30/hour
+        storage: EBS only
+      category: General purpose
+      description: 48 CPU, 192 GiB RAM
+      display_name: m5-12xlarge
+      family: M5
+      kubespawner_override:
+        cpu_guarantee: 43.2
+        cpu_limit: 48.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 160932M
+        mem_limit: 160932M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - m5-12xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: m5-12xlarge
+    - aws:
+        cpu: '2'
+        gpu: null
+        instance_size: micro
+        memory: 1 GiB
+        network: Low to Moderate
+        price: 0.0104
+        price_description: $0.01/hour
+        storage: EBS only
+      category: General purpose
+      description: 2 CPU, 1 GiB RAM
+      display_name: t3-micro
+      family: T3
+      kubespawner_override:
+        cpu_guarantee: 1.8
+        cpu_limit: 2.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 838M
+        mem_limit: 838M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - t3-micro
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: t3-micro
+    - aws:
+        cpu: '8'
+        gpu: null
+        instance_size: 2xlarge
+        memory: 32 GiB
+        network: Up to 10 Gigabit
+        price: 0.384
+        price_description: $0.38/hour
+        storage: EBS only
+      category: General purpose
+      description: 8 CPU, 32 GiB RAM
+      display_name: m5-2xlarge
+      family: M5
+      kubespawner_override:
+        cpu_guarantee: 7.2
+        cpu_limit: 8.0
+        extra_resource_limits:
+          nvidia.com/gpu: '0'
+        mem_guarantee: 26822M
+        mem_limit: 26822M
+        node_affinity_required:
+        - matchExpressions:
+          - key: dirac.washington.edu/instance-name
+            operator: In
+            values:
+            - m5-2xlarge
+        tolerations:
+        - effect: NoSchedule
+          key: dirac.washington.edu/instance-name
+          operator: Equal
+          value: m5-2xlarge

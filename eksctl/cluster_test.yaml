@@ -1,0 +1,60 @@
+apiVersion: eksctl.io/v1alpha5
+availabilityZones:
+- us-west-2a
+- us-west-2b
+- us-west-2c
+kind: ClusterConfig
+metadata:
+  name: dirac
+  region: us-west-2
+nodeGroups:
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: g4dn.xlarge
+  labels:
+    dirac.washington.edu/instance-name: g4dn-xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: g4dn-xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: g4dn-xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: g4dn-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: g4dn-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.large
+  labels:
+    dirac.washington.edu/instance-name: m5-large
+  maxSize: 100
+  minSize: 0
+  name: m5-large-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-large:NoSchedule

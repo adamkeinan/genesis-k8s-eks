@@ -1,0 +1,20 @@
+# file: values.yaml
+# for efs-provisioner helm chart
+
+efsProvisioner:
+  efsFileSystemId: "fs-c6f0156c"
+  awsRegion: "us-west-2"
+  provisionerName: "dirac.washington.edu/aws-efs"
+  path: "/dirac-eks"
+  storageClass:
+    reclaimPolicy: Retain
+    gidAllocate:
+      enabled: false
+
+tolerations:
+- key: "dirac.washington.edu/instance-name"
+  operator: "Exists"
+  effect: "NoSchedule"
+
+nodeSelector:
+  dirac.washington.edu/instance-name: "t3-medium"

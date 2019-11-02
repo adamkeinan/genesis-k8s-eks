@@ -1,0 +1,163 @@
+# configurations for this script
+config:
+  region: "us-west-2"
+  availabilityZones: ["a", "b", "c"]
+  clusterName: "dirac"
+  overPayBy: 5
+# defaults for the nodegroup YAML
+nodegroupDefaults:
+  name: "{instance_name}-{region}{availability_zones_short}"
+  desiredCapacity: 0
+  minSize: 0
+  maxSize: 100
+  securityGroups:
+    withLocal: false
+    withShared: true
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  ami: ami-05d586e6f773f6abf
+  labels: 
+    dirac.washington.edu/instance-name: "{instance_name}"
+#  taints:
+#    dirac.washington.edu/instance-name: "{instance_name}:NoSchedule"
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: "{instance_name}"
+#    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: "{instance_name}:NoSchedule"
+# Descriptions of the nodegroups we want to make
+groups:
+# GPU nodes for notebooks
+- instances:
+  - "g4dn.xlarge"
+  - "g4dn.2xlarge"
+  - "g4dn.4xlarge"
+  - "p3.2xlarge"
+  - "p3.8xlarge"
+  - "p3.16xlarge"
+  type: "onDemand"
+  separateAvailabilityZones: true
+  separateInstances: true
+  separateFamilies: true
+  nodegroupOverrides:
+    ami: ami-0ca5998dc2c88e64b
+    labels: 
+      nvidia.com/gpu: 'true'
+    tags:
+      k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+# Compute nodes for notebooks
+- instances: 
+  # compute
+  - "c5.large"
+  - "c5.xlarge"
+  - "c5.2xlarge"
+  - "c5.4xlarge"
+  - "c5.12xlarge"
+  - "c5.24xlarge"
+  # general purpose
+  - "m5.large"
+  - "m5.xlarge"
+  - "m5.2xlarge"
+  - "m5.4xlarge"
+  - "m5.8xlarge"
+  - "m5.12xlarge"
+  - "m5.24xlarge"
+  # general purpose high network
+  # - "m5n.large"
+  # - "m5n.xlarge"
+  # - "m5n.2xlarge"
+  # - "m5n.4xlarge"
+  # - "m5n.8xlarge"
+  # - "m5n.12xlarge"
+  # - "m5n.24xlarge"
+  # small / cheap instances
+  - "t3.micro"
+  - "t3.small"
+  - "t3.medium"
+  - "t3.large"
+  - "t3.xlarge"
+  - "t3.2xlarge"
+  # memory optimized
+  - "r5.large"
+  - "r5.xlarge"
+  - "r5.2xlarge"
+  - "r5.4xlarge"
+  - "r5.12xlarge"
+  - "r5.24xlarge"
+  type: "onDemand"
+  separateAvailabilityZones: true
+  separateInstances: true
+  separateFamilies: true
+# Compute nodes for Spark (Spot instances)
+- instances: 
+  # compute
+  - "c5.large"
+  - "c5.xlarge"
+  - "c5.2xlarge"
+  - "c5.4xlarge"
+  - "c5.12xlarge"
+  - "c5.24xlarge"
+  # general purpose
+  - "m5.large"
+  - "m5.xlarge"
+  - "m5.2xlarge"
+  - "m5.4xlarge"
+  - "m5.8xlarge"
+  - "m5.12xlarge"
+  - "m5.24xlarge"
+  # general purpose high network
+  # - "m5n.large"
+  # - "m5n.xlarge"
+  # - "m5n.2xlarge"
+  # - "m5n.4xlarge"
+  # - "m5n.8xlarge"
+  # - "m5n.12xlarge"
+  # - "m5n.24xlarge"
+  # small / cheap instances
+  - "t3.micro"
+  - "t3.small"
+  - "t3.medium"
+  - "t3.large"
+  - "t3.xlarge"
+  - "t3.2xlarge"
+  # memory optimized
+  - "r5.large"
+  - "r5.xlarge"
+  - "r5.2xlarge"
+  - "r5.4xlarge"
+  - "r5.12xlarge"
+  - "r5.24xlarge"
+  type: "spot"
+  separateAvailabilityZones: true
+  separateInstances: true
+  separateFamilies: true
+  nodegroupOverrides:
+    name: "{instance_name}-{region}{availability_zones_short}-spot"
+    labels: 
+      dirac.washington.edu/instance-name: "{instance_name}-spot"
+ #   taints:
+ #     dirac.washington.edu/instance-name: "{instance_name}-spot:NoSchedule"
+    tags:
+      k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: "{instance_name}-spot"
+#      k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: "{instance_name}-spot:NoSchedule"
+
+hubDefaults:
+  kubespawner_override:
+    node_affinity_required:
+    # request a node with label dirac.washington.edu/instance-name={instance_name}
+    - matchExpressions:
+      - key: "dirac.washington.edu/instance-name"
+        operator: "In"
+        values:
+        - "{instance_name}"
+#    tolerations:
+#    # tolerate the node taint dirac.washington.edu/instance-name={instance_name}:NoSchedule
+#    - key: 'dirac.washington.edu/instance-name'
+#      operator: 'Equal'
+#      value: '{instance_name}'
+#      effect: 'NoSchedule'
+    
+  
+

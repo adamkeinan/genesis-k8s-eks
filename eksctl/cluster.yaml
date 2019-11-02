@@ -1,0 +1,5212 @@
+apiVersion: eksctl.io/v1alpha5
+availabilityZones:
+- us-west-2a
+- us-west-2b
+- us-west-2c
+kind: ClusterConfig
+metadata:
+  name: dirac
+  region: us-west-2
+nodeGroups:
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: g4dn.xlarge
+  labels:
+    dirac.washington.edu/instance-name: g4dn-xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: g4dn-xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: g4dn-xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: g4dn-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: g4dn-xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: g4dn.xlarge
+  labels:
+    dirac.washington.edu/instance-name: g4dn-xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: g4dn-xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: g4dn-xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: g4dn-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: g4dn-xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: g4dn.xlarge
+  labels:
+    dirac.washington.edu/instance-name: g4dn-xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: g4dn-xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: g4dn-xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: g4dn-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: g4dn-xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: g4dn.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: g4dn-2xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: g4dn-2xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: g4dn-2xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: g4dn-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: g4dn-2xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: g4dn.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: g4dn-2xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: g4dn-2xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: g4dn-2xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: g4dn-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: g4dn-2xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: g4dn.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: g4dn-2xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: g4dn-2xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: g4dn-2xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: g4dn-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: g4dn-2xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: g4dn.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: g4dn-4xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: g4dn-4xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: g4dn-4xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: g4dn-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: g4dn-4xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: g4dn.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: g4dn-4xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: g4dn-4xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: g4dn-4xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: g4dn-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: g4dn-4xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: g4dn.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: g4dn-4xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: g4dn-4xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: g4dn-4xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: g4dn-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: g4dn-4xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: p3.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: p3-2xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: p3-2xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: p3-2xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: p3-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: p3-2xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: p3.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: p3-2xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: p3-2xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: p3-2xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: p3-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: p3-2xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: p3.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: p3-2xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: p3-2xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: p3-2xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: p3-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: p3-2xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: p3.8xlarge
+  labels:
+    dirac.washington.edu/instance-name: p3-8xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: p3-8xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: p3-8xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: p3-8xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: p3-8xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: p3.8xlarge
+  labels:
+    dirac.washington.edu/instance-name: p3-8xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: p3-8xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: p3-8xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: p3-8xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: p3-8xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: p3.8xlarge
+  labels:
+    dirac.washington.edu/instance-name: p3-8xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: p3-8xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: p3-8xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: p3-8xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: p3-8xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: p3.16xlarge
+  labels:
+    dirac.washington.edu/instance-name: p3-16xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: p3-16xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: p3-16xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: p3-16xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: p3-16xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: p3.16xlarge
+  labels:
+    dirac.washington.edu/instance-name: p3-16xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: p3-16xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: p3-16xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: p3-16xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: p3-16xlarge:NoSchedule
+- ami: ami-0ca5998dc2c88e64b
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: p3.16xlarge
+  labels:
+    dirac.washington.edu/instance-name: p3-16xlarge
+    nvidia.com/gpu: 'true'
+  maxSize: 100
+  minSize: 0
+  name: p3-16xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: p3-16xlarge
+    k8s.io/cluster-autoscaler/node-template/label/nvidia.com/gpu: 'true'
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: p3-16xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: p3-16xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.large
+  labels:
+    dirac.washington.edu/instance-name: c5-large
+  maxSize: 100
+  minSize: 0
+  name: c5-large-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.large
+  labels:
+    dirac.washington.edu/instance-name: c5-large
+  maxSize: 100
+  minSize: 0
+  name: c5-large-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.large
+  labels:
+    dirac.washington.edu/instance-name: c5-large
+  maxSize: 100
+  minSize: 0
+  name: c5-large-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-2xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-2xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-2xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-4xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-4xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-4xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-4xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-4xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-4xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-4xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-4xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-4xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-4xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-4xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-4xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.12xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-12xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-12xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-12xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-12xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-12xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.12xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-12xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-12xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-12xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-12xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-12xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.12xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-12xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-12xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-12xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-12xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-12xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.24xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-24xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-24xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-24xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-24xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-24xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.24xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-24xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-24xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-24xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-24xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-24xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: c5.24xlarge
+  labels:
+    dirac.washington.edu/instance-name: c5-24xlarge
+  maxSize: 100
+  minSize: 0
+  name: c5-24xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-24xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-24xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-24xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.large
+  labels:
+    dirac.washington.edu/instance-name: m5-large
+  maxSize: 100
+  minSize: 0
+  name: m5-large-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.large
+  labels:
+    dirac.washington.edu/instance-name: m5-large
+  maxSize: 100
+  minSize: 0
+  name: m5-large-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.large
+  labels:
+    dirac.washington.edu/instance-name: m5-large
+  maxSize: 100
+  minSize: 0
+  name: m5-large-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-2xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-2xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-2xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-4xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-4xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-4xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-4xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-4xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-4xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-4xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-4xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-4xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-4xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-4xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-4xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.8xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-8xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-8xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-8xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-8xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-8xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.8xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-8xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-8xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-8xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-8xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-8xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.8xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-8xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-8xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-8xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-8xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-8xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.12xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-12xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-12xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-12xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-12xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-12xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.12xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-12xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-12xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-12xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-12xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-12xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.12xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-12xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-12xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-12xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-12xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-12xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.24xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-24xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-24xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-24xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-24xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-24xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.24xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-24xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-24xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-24xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-24xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-24xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5.24xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5-24xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5-24xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-24xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-24xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-24xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.large
+  labels:
+    dirac.washington.edu/instance-name: m5n-large
+  maxSize: 100
+  minSize: 0
+  name: m5n-large-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.large
+  labels:
+    dirac.washington.edu/instance-name: m5n-large
+  maxSize: 100
+  minSize: 0
+  name: m5n-large-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.large
+  labels:
+    dirac.washington.edu/instance-name: m5n-large
+  maxSize: 100
+  minSize: 0
+  name: m5n-large-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-2xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-2xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-2xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-4xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-4xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-4xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-4xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-4xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-4xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-4xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-4xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-4xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-4xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-4xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-4xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.8xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-8xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-8xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-8xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-8xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-8xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.8xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-8xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-8xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-8xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-8xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-8xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.8xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-8xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-8xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-8xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-8xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-8xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.12xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-12xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-12xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-12xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-12xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-12xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.12xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-12xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-12xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-12xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-12xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-12xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.12xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-12xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-12xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-12xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-12xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-12xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.24xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-24xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-24xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-24xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-24xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-24xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.24xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-24xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-24xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-24xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-24xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-24xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: m5n.24xlarge
+  labels:
+    dirac.washington.edu/instance-name: m5n-24xlarge
+  maxSize: 100
+  minSize: 0
+  name: m5n-24xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-24xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-24xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-24xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.micro
+  labels:
+    dirac.washington.edu/instance-name: t3-micro
+  maxSize: 100
+  minSize: 0
+  name: t3-micro-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-micro
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-micro:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-micro:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.micro
+  labels:
+    dirac.washington.edu/instance-name: t3-micro
+  maxSize: 100
+  minSize: 0
+  name: t3-micro-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-micro
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-micro:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-micro:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.micro
+  labels:
+    dirac.washington.edu/instance-name: t3-micro
+  maxSize: 100
+  minSize: 0
+  name: t3-micro-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-micro
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-micro:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-micro:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.small
+  labels:
+    dirac.washington.edu/instance-name: t3-small
+  maxSize: 100
+  minSize: 0
+  name: t3-small-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-small
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-small:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-small:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.small
+  labels:
+    dirac.washington.edu/instance-name: t3-small
+  maxSize: 100
+  minSize: 0
+  name: t3-small-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-small
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-small:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-small:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.small
+  labels:
+    dirac.washington.edu/instance-name: t3-small
+  maxSize: 100
+  minSize: 0
+  name: t3-small-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-small
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-small:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-small:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.medium
+  labels:
+    dirac.washington.edu/instance-name: t3-medium
+  maxSize: 100
+  minSize: 0
+  name: t3-medium-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-medium
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-medium:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-medium:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.medium
+  labels:
+    dirac.washington.edu/instance-name: t3-medium
+  maxSize: 100
+  minSize: 0
+  name: t3-medium-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-medium
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-medium:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-medium:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.medium
+  labels:
+    dirac.washington.edu/instance-name: t3-medium
+  maxSize: 100
+  minSize: 0
+  name: t3-medium-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-medium
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-medium:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-medium:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.large
+  labels:
+    dirac.washington.edu/instance-name: t3-large
+  maxSize: 100
+  minSize: 0
+  name: t3-large-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.large
+  labels:
+    dirac.washington.edu/instance-name: t3-large
+  maxSize: 100
+  minSize: 0
+  name: t3-large-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.large
+  labels:
+    dirac.washington.edu/instance-name: t3-large
+  maxSize: 100
+  minSize: 0
+  name: t3-large-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.xlarge
+  labels:
+    dirac.washington.edu/instance-name: t3-xlarge
+  maxSize: 100
+  minSize: 0
+  name: t3-xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.xlarge
+  labels:
+    dirac.washington.edu/instance-name: t3-xlarge
+  maxSize: 100
+  minSize: 0
+  name: t3-xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.xlarge
+  labels:
+    dirac.washington.edu/instance-name: t3-xlarge
+  maxSize: 100
+  minSize: 0
+  name: t3-xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: t3-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: t3-2xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: t3-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: t3-2xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: t3.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: t3-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: t3-2xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.large
+  labels:
+    dirac.washington.edu/instance-name: r5-large
+  maxSize: 100
+  minSize: 0
+  name: r5-large-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.large
+  labels:
+    dirac.washington.edu/instance-name: r5-large
+  maxSize: 100
+  minSize: 0
+  name: r5-large-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.large
+  labels:
+    dirac.washington.edu/instance-name: r5-large
+  maxSize: 100
+  minSize: 0
+  name: r5-large-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-large
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-large:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-large:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-2xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-2xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.2xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-2xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-2xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-2xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-2xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-2xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-4xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-4xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-4xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-4xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-4xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-4xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-4xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-4xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.4xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-4xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-4xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-4xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-4xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-4xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.12xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-12xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-12xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-12xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-12xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-12xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.12xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-12xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-12xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-12xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-12xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-12xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.12xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-12xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-12xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-12xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-12xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-12xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.24xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-24xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-24xlarge-us-west-2a
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-24xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-24xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-24xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.24xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-24xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-24xlarge-us-west-2b
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-24xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-24xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-24xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instanceType: r5.24xlarge
+  labels:
+    dirac.washington.edu/instance-name: r5-24xlarge
+  maxSize: 100
+  minSize: 0
+  name: r5-24xlarge-us-west-2c
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-24xlarge
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-24xlarge:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-24xlarge:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.large
+    - c5.24xlarge
+    maxPrice: 0.049266000000000004
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-large-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-large-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.large
+    - c5.24xlarge
+    maxPrice: 0.049266000000000004
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-large-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-large-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.large
+    - c5.24xlarge
+    maxPrice: 0.049266000000000004
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-large-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-large-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.xlarge
+    - c5.24xlarge
+    maxPrice: 0.07207200000000001
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.xlarge
+    - c5.24xlarge
+    maxPrice: 0.07207200000000001
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.xlarge
+    - c5.24xlarge
+    maxPrice: 0.07207200000000001
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.2xlarge
+    - c5.24xlarge
+    maxPrice: 0.15628200000000003
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-2xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-2xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-2xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-2xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-2xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.2xlarge
+    - c5.24xlarge
+    maxPrice: 0.15628200000000003
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-2xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-2xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-2xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-2xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-2xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.2xlarge
+    - c5.24xlarge
+    maxPrice: 0.15628200000000003
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-2xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-2xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-2xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-2xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-2xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.4xlarge
+    - c5.24xlarge
+    maxPrice: 0.338919
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-4xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-4xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-4xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-4xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-4xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.4xlarge
+    - c5.24xlarge
+    maxPrice: 0.338919
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-4xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-4xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-4xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-4xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-4xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.4xlarge
+    - c5.24xlarge
+    maxPrice: 0.338919
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-4xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-4xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-4xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-4xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-4xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.12xlarge
+    - c5.24xlarge
+    maxPrice: 0.8113350000000001
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-12xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-12xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-12xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-12xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-12xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.12xlarge
+    - c5.24xlarge
+    maxPrice: 0.8113350000000001
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-12xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-12xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-12xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-12xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-12xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - c5.12xlarge
+    - c5.24xlarge
+    maxPrice: 0.8113350000000001
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: c5-12xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: c5-12xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: c5-12xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: c5-12xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: c5-12xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.large
+    - m5.24xlarge
+    maxPrice: 0.035910000000000004
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-large-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-large-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.large
+    - m5.24xlarge
+    maxPrice: 0.035910000000000004
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-large-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-large-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.large
+    - m5.24xlarge
+    maxPrice: 0.035910000000000004
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-large-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-large-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.xlarge
+    - m5.24xlarge
+    maxPrice: 0.084525
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.xlarge
+    - m5.24xlarge
+    maxPrice: 0.084525
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.xlarge
+    - m5.24xlarge
+    maxPrice: 0.084525
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.2xlarge
+    - m5.24xlarge
+    maxPrice: 0.1455825
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-2xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-2xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-2xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-2xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-2xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.2xlarge
+    - m5.24xlarge
+    maxPrice: 0.1455825
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-2xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-2xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-2xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-2xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-2xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.2xlarge
+    - m5.24xlarge
+    maxPrice: 0.1455825
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-2xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-2xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-2xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-2xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-2xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.4xlarge
+    - m5.24xlarge
+    maxPrice: 0.356475
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-4xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-4xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-4xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-4xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-4xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.4xlarge
+    - m5.24xlarge
+    maxPrice: 0.356475
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-4xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-4xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-4xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-4xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-4xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.4xlarge
+    - m5.24xlarge
+    maxPrice: 0.356475
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-4xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-4xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-4xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-4xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-4xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.8xlarge
+    - m5.24xlarge
+    maxPrice: 0.6721469999999999
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-8xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-8xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-8xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-8xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-8xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.8xlarge
+    - m5.24xlarge
+    maxPrice: 0.6721469999999999
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-8xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-8xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-8xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-8xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-8xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.8xlarge
+    - m5.24xlarge
+    maxPrice: 0.6721469999999999
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-8xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-8xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-8xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-8xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-8xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.12xlarge
+    - m5.24xlarge
+    maxPrice: 0.8659699999999999
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-12xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-12xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-12xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-12xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-12xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.12xlarge
+    - m5.24xlarge
+    maxPrice: 0.8659699999999999
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-12xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-12xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-12xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-12xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-12xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5.12xlarge
+    - m5.24xlarge
+    maxPrice: 0.8659699999999999
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5-12xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5-12xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5-12xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5-12xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5-12xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.large
+    - m5n.24xlarge
+    maxPrice: 0.03549
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-large-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-large-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.large
+    - m5n.24xlarge
+    maxPrice: 0.03549
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-large-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-large-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.large
+    - m5n.24xlarge
+    maxPrice: 0.03549
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-large-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-large-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.xlarge
+    - m5n.24xlarge
+    maxPrice: 0.07098
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.xlarge
+    - m5n.24xlarge
+    maxPrice: 0.07098
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.xlarge
+    - m5n.24xlarge
+    maxPrice: 0.07098
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.2xlarge
+    - m5n.24xlarge
+    maxPrice: 0.14196
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-2xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-2xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-2xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-2xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-2xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.2xlarge
+    - m5n.24xlarge
+    maxPrice: 0.14196
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-2xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-2xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-2xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-2xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-2xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.2xlarge
+    - m5n.24xlarge
+    maxPrice: 0.14196
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-2xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-2xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-2xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-2xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-2xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.4xlarge
+    - m5n.24xlarge
+    maxPrice: 0.28392
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-4xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-4xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-4xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-4xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-4xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.4xlarge
+    - m5n.24xlarge
+    maxPrice: 0.28392
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-4xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-4xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-4xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-4xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-4xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.4xlarge
+    - m5n.24xlarge
+    maxPrice: 0.28392
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-4xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-4xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-4xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-4xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-4xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.8xlarge
+    - m5n.24xlarge
+    maxPrice: 0.567945
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-8xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-8xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-8xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-8xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-8xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.8xlarge
+    - m5n.24xlarge
+    maxPrice: 0.567945
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-8xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-8xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-8xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-8xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-8xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.8xlarge
+    - m5n.24xlarge
+    maxPrice: 0.567945
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-8xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-8xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-8xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-8xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-8xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.12xlarge
+    - m5n.24xlarge
+    maxPrice: 0.8518650000000001
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-12xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-12xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-12xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-12xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-12xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.12xlarge
+    - m5n.24xlarge
+    maxPrice: 0.8518650000000001
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-12xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-12xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-12xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-12xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-12xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - m5n.12xlarge
+    - m5n.24xlarge
+    maxPrice: 0.8518650000000001
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: m5n-12xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: m5n-12xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: m5n-12xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: m5n-12xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: m5n-12xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.micro
+    - t3.2xlarge
+    maxPrice: 0.003255
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-micro-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-micro-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-micro-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-micro-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-micro-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.micro
+    - t3.2xlarge
+    maxPrice: 0.003255
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-micro-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-micro-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-micro-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-micro-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-micro-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.micro
+    - t3.2xlarge
+    maxPrice: 0.003255
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-micro-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-micro-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-micro-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-micro-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-micro-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.small
+    - t3.2xlarge
+    maxPrice: 0.00651
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-small-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-small-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-small-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-small-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-small-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.small
+    - t3.2xlarge
+    maxPrice: 0.00651
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-small-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-small-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-small-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-small-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-small-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.small
+    - t3.2xlarge
+    maxPrice: 0.00651
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-small-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-small-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-small-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-small-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-small-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.medium
+    - t3.2xlarge
+    maxPrice: 0.013125000000000001
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-medium-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-medium-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-medium-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-medium-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-medium-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.medium
+    - t3.2xlarge
+    maxPrice: 0.013125000000000001
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-medium-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-medium-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-medium-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-medium-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-medium-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.medium
+    - t3.2xlarge
+    maxPrice: 0.013125000000000001
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-medium-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-medium-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-medium-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-medium-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-medium-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.large
+    - t3.2xlarge
+    maxPrice: 0.028980000000000002
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-large-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-large-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.large
+    - t3.2xlarge
+    maxPrice: 0.028980000000000002
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-large-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-large-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.large
+    - t3.2xlarge
+    maxPrice: 0.028980000000000002
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-large-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-large-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.xlarge
+    - t3.2xlarge
+    maxPrice: 0.05565
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.xlarge
+    - t3.2xlarge
+    maxPrice: 0.05565
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - t3.xlarge
+    - t3.2xlarge
+    maxPrice: 0.05565
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: t3-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: t3-xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: t3-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: t3-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: t3-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.large
+    - r5.24xlarge
+    maxPrice: 0.03717
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-large-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-large-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.large
+    - r5.24xlarge
+    maxPrice: 0.03717
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-large-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-large-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.large
+    - r5.24xlarge
+    maxPrice: 0.03717
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-large-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-large-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-large-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-large-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-large-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.xlarge
+    - r5.24xlarge
+    maxPrice: 0.087815
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.xlarge
+    - r5.24xlarge
+    maxPrice: 0.087815
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.xlarge
+    - r5.24xlarge
+    maxPrice: 0.087815
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.2xlarge
+    - r5.24xlarge
+    maxPrice: 0.19741749999999997
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-2xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-2xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-2xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-2xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-2xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.2xlarge
+    - r5.24xlarge
+    maxPrice: 0.19741749999999997
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-2xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-2xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-2xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-2xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-2xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.2xlarge
+    - r5.24xlarge
+    maxPrice: 0.19741749999999997
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-2xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-2xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-2xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-2xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-2xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.4xlarge
+    - r5.24xlarge
+    maxPrice: 0.33484500000000006
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-4xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-4xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-4xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-4xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-4xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.4xlarge
+    - r5.24xlarge
+    maxPrice: 0.33484500000000006
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-4xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-4xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-4xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-4xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-4xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.4xlarge
+    - r5.24xlarge
+    maxPrice: 0.33484500000000006
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-4xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-4xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-4xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-4xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-4xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2a
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.12xlarge
+    - r5.24xlarge
+    maxPrice: 0.890085
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-12xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-12xlarge-us-west-2a-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-12xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-12xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-12xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2b
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.12xlarge
+    - r5.24xlarge
+    maxPrice: 0.890085
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-12xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-12xlarge-us-west-2b-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-12xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-12xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-12xlarge-spot:NoSchedule
+- ami: ami-05d586e6f773f6abf
+  availabilityZones:
+  - us-west-2c
+  desiredCapacity: 0
+  iam:
+    withAddonPolicies:
+      autoScaler: true
+  instancesDistribution:
+    instanceTypes:
+    - r5.12xlarge
+    - r5.24xlarge
+    maxPrice: 0.890085
+    onDemandBaseCapacity: 0
+    onDemandPercentageAboveBaseCapacity: 0
+  labels:
+    dirac.washington.edu/instance-name: r5-12xlarge-spot
+  maxSize: 100
+  minSize: 0
+  name: r5-12xlarge-us-west-2c-spot
+  securityGroups:
+    withLocal: false
+    withShared: true
+  ssh:
+    allow: true
+    publicKeyName: eks-dirac-nodes-access
+  tags:
+    k8s.io/cluster-autoscaler/node-template/label/dirac.washington.edu/instance-name: r5-12xlarge-spot
+    k8s.io/cluster-autoscaler/node-template/taint/dirac.washington.edu/instance-name: r5-12xlarge-spot:NoSchedule
+  taints:
+    dirac.washington.edu/instance-name: r5-12xlarge-spot:NoSchedule
